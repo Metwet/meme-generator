@@ -15,30 +15,79 @@
 }
 
 .meme img:hover {
-    border: 2px solid green;
+    border: 2px solid #1f3c44;
 }
+
+.addMeme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100px;
+    height: 100px;
+    outline: 2px dashed #5d5d5d;
+    outline-offset: -12px;
+    font-family: 'Segoe UI';
+    color: #1f3c44;
+    padding: 0 20px;
+}
+
+.addMeme label {
+    font-weight: bold;
+}
+
+.addMeme label:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.addMeme  input[type=file] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    position: absolute;
+    z-index: -10;
+}
+
 
 .workspace {
     margin-top: 40px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .workspace img {
-    max-width: 400px;
+    max-width: 600px;
 }
 
 .memeplace {
     position: relative;
+    overflow: hidden;
 }
 
 .text-overlay {
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 10%;
     font-size: 28px;
     text-transform: uppercase;
-    color: azure;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+}
+
+.input-overlay {
+    position: absolute;
+    top: 50%;
+    left: 1%;
+    max-width: 90%;
+    font-size: 28px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #ffffff;
+    font-weight: 600;
     background-color: transparent;
     border: none;
     outline: none;
