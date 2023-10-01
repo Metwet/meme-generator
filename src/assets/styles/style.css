@@ -1,0 +1,46 @@
+.container {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.pick-meme {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.meme img {
+    max-width: 100px;
+    border: 2px solid transparent;
+}
+
+.meme img:hover {
+    border: 2px solid green;
+}
+
+.workspace {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.workspace img {
+    max-width: 400px;
+}
+
+.memeplace {
+    position: relative;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: azure;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: Arial, sans-serif;
+}
