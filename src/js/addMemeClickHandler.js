@@ -49,7 +49,7 @@ function addMemeClickHandler(meme){
             saveButton.textContent = 'Сохранить мем';
             workspace.appendChild(saveButton);
         }
-
+        
         saveButton.addEventListener('click', () => {
             const canvas = document.createElement('canvas');
             canvas.width = memeplace.offsetWidth;
@@ -58,10 +58,10 @@ function addMemeClickHandler(meme){
         
             const backgroundImage = new Image();
             backgroundImage.src = memeplace.querySelector('img').src;
-        
+            
             backgroundImage.onload = () => {
                 ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
-        
+                
                 let text = textOverlay.textContent;
                 const fontSize = getComputedStyle(textOverlay).fontSize;
                 const textTransform = getComputedStyle(textOverlay).textTransform;
@@ -72,20 +72,16 @@ function addMemeClickHandler(meme){
                 ctx.font = `${fontWeight} ${fontSize} ${fontFamily}`;
                 ctx.fillStyle = textColor;
                 
-                // Применяем text-transform
                 if (textTransform === 'uppercase') {
                     text = text.toUpperCase();
                 } else if (textTransform === 'lowercase') {
                     text = text.toLowerCase();
                 }
-        
-                // Отрисовываем текст на холсте
+                
                 ctx.fillText(text, parseFloat(textOverlay.style.left), parseFloat(textOverlay.style.top));
         
-                // Преобразуем холст в изображение формата PNG
                 const memeImage = canvas.toDataURL('image/png');
         
-                // Создаем ссылку для скачивания
                 const downloadLink = document.createElement('a');
                 downloadLink.href = memeImage;
                 downloadLink.download = 'meme.png';
